@@ -30,6 +30,9 @@ vim.keymap.set('n', 'gp', ':bprevious<CR>')
 
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
+vim.keymap.set('n', '<M-n>', ':cnext');
+vim.keymap.set('n', '<M-p>', ':cprev');
+
 
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")

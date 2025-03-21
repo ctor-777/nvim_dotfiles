@@ -35,10 +35,19 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = capabilities
 			})
+			lspconfig.jdtls.setup({
+				capabilities = capabilities
+			})
+			-- lspconfig.sqls.setup({
+			-- 	capabilities = capabilities
+			-- })
+			-- lspconfig.asm_lsp.setup({
+			-- 	capabilities = capabilities
+			-- })
 
 		vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
 		vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+		vim.keymap.set("n", "<leader>gR", vim.lsp.buf.references, {})
 		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 		vim.keymap.set("n", "<leader>gi", vim.lsp.buf.incoming_calls, {})
 		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.rename, {})
@@ -49,4 +58,16 @@ return {
 		"tamago324/nlsp-settings.nvim",
 		lazy = false,
 	}
+	-- {
+	-- 	"mfussenegger/nvim-jdtls",
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		local config = {
+	-- 			cmd = {vim.fn.stdpath('data') .. '/mason/bin/jdtls'},
+	-- 			root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
+	-- 		}
+	-- 		require('jdtls').start_or_attach(config)
+	-- 	end,
+	--
+	-- }
 }
