@@ -65,6 +65,17 @@ return {
 
 		dap.configurations.c = dap.configurations.cpp
 		dap.configurations.rust = dap.configurations.cpp
+		dap.configurations.java = {
+			{
+				type = 'java',
+				request = 'launch',
+				name = 'Launch Java Program',
+				mainClass = 'scrabble.Main', -- Replace with your main class
+				projectName = 'your-project-name', -- Replace with your project name
+				javaExec = '', -- Path to your Java executable
+			},
+		}
+
 
 dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
